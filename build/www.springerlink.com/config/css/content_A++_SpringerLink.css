@@ -1,0 +1,497 @@
+/* Change Notice: lowercasing for compatibility with XHTML */
+/* Change Notice: element names to lowercase: BODY, H1, H2, H3, H4, H5, TR, A */
+/* Change Notice: property names to lowercase: FONT-SIZE, FONT-WEIGHT, FONT-FAMILY, FONT-STYLE, COLOR, BACKGROUND */
+
+
+
+/***************************************************************
+OLD STYLES
+****************************************************************/
+body {
+	font-size: 12pt; background: white; line-height: 1.2;
+}
+
+div.Heading1 {
+  font-size: 20pt; font-weight: bold; color: #444444; font-family: Arial, Helvetica, sans-serif; margin-top: 0.7em; margin-bottom: 0.7em
+}
+div.SubTitle {
+  font-size: 19pt; font-weight: bold; color: #444444; font-family: Arial, Helvetica, sans-serif
+}
+div.heading2 {
+  font-size: 19pt; font-weight: bold; font-family: Arial, Helvetica, sans-serif; margin-top: 0.8em; margin-bottom: 0.8em
+}
+div.SubHeading2 {
+  font-size: 14pt; font-family: Arial, Helvetica, sans-serif
+}
+h2.rubric {
+  font-size: 16pt; color: #666666; font-family: Arial, Helvetica, sans-serif
+}
+.subrubric {
+  font-size: 14pt; color: #666666; font-family: Arial, Helvetica, sans-serif
+}
+div.Heading3 {
+  font-size: 16pt; font-weight: bold; font-family: Arial, Helvetica, sans-serif; margin-top: 0.8em; margin-bottom: 0.8em
+}
+div.SubHeading3 {
+  font-size: 12pt; font-weight: bold; font-family: Arial, Helvetica, sans-serif
+}
+
+h4.Section3 { 
+	font-size: 14pt; 
+	font-family: Arial, Helvetica, sans-serif;
+}
+h5.Section4 { 
+	font-size: 14pt;
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: Italic;
+}
+h3.rubric {
+	color: #666666; 
+	font-family: Arial, Helvetica, sans-serif;
+}
+h5.Section5 {
+	font-size: 12pt; 
+	font-family: Arial, Helvetica, sans-serif;
+}
+p.HeadSec6 {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: Italic;
+}
+p.HeadSec7 {
+	font-family: Arial, Helvetica, sans-serif; 
+	text-decoration:underline;
+}
+.HeadList {
+	font-style: italic; margin-top:1em
+}
+a:link {
+	color: #ff0000
+}
+a:active {
+	color: #ff0000
+}
+a:visited {
+	color: #5f5f5f
+}
+tr.header {
+  background: #d6d6d6;
+}
+tr.BibSectionHeading {
+	font-size: 12pt
+}
+
+h1 { font-size: 20pt; color: #444444; font-family: Arial, Helvetica, sans-serif }
+h2 { font-size: 16pt; font-family: Arial, Helvetica, sans-serif }
+h3 { font-family: Arial, Helvetica, sans-serif }
+h4 { font-family: Arial, Helvetica, sans-serif }
+h5 { font-size: 12pt; font-family: Arial, Helvetica, sans-serif }
+
+/* CSS declarations for FM and BM */
+div#seriesinfopage {
+  font-size: 80%;
+}
+div#editors-in-chief {
+  padding-top: 1em;
+  padding-right: 2em;
+}
+div#editors-in-chief p {
+  font-weight: bold;
+}
+div#managingeditors {
+  padding-top: 1em;
+  padding-right: 2em;
+}
+div#managingeditors p {
+  font-weight: bold;
+}
+div#serieseditors {
+  padding-top: 1em;
+  padding-right: 2em;
+}
+div#serieseditors p {
+  font-weight: bold;
+}
+div#seriesinformationtext {
+  padding-top: 1em;
+}
+div#booktitlepage div.bookfeaturetext {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+div#copyrightpage {
+  font-size: 80%;
+}
+div#copyrightpage p.editorgroup {
+  padding-bottom: 4em;
+}
+div#copyrightpage p.authorgroup {
+  padding-bottom: 4em;
+}
+div#frontispiece {
+}
+div#dedication p {
+  margin-left: 33%;
+  font-style: italic;
+}
+/* Because IE doesn't support start pattern ID selectors, used class */
+div.foreword div.forewordbody {
+  padding-top: 4em;
+}
+/* Because IE doesn't support start pattern ID selectors, used class */
+div.preface div.prefacebody {
+  padding-top: 4em;
+}
+div#articlenotes {
+}
+div#bookacknowledgments div.babody {
+  padding-top: 4em;
+}
+div#booknotes div.bnbody {
+  padding-top: 4em;
+}
+div#abbreviationgroup div.agbody { 
+  padding-top: 4em;
+}
+div#abbreviationgroup dl { 
+}
+div#abbreviationgroup dt {
+  font-style: italic;
+  width: 10%;
+  padding: .5em;
+  float: left;
+  margin: 0;
+}
+div#abbreviationgroup dd {
+  margin-left: 15%;
+  padding: .5em;
+}
+div#toc div.tocbody {
+  padding-top: 4em;
+}
+div.tocbody table {
+}
+div#toc .tocitem {
+  font-weight: bold;
+  text-align: left;
+  padding-right: 2em;
+}
+div#toc .tocpn {
+  text-align: right;
+  vertical-align: bottom;
+}
+div#toc td.author {
+  padding-left: 2em;
+}
+div#loh div.lohbody {
+  padding-top: 4em;
+}
+div#loh .lohitem {
+  text-align: left;
+  padding-right: 2em;
+}
+div#loh .lohpn {
+  text-align: right;
+  vertical-align: bottom;
+}
+div#loc div.locbody {
+  padding-top: 4em;
+}
+div#loc .authorgroup {
+  font-style: normal;
+  font-weight: normal;
+}
+div#loc .affiliation {
+  padding-bottom: .5em;
+}
+div.index div.heading2 {
+  padding-bottom: 2.4em;
+}
+div.index div.primaryie {
+}
+div.index div.secondaryie {
+  margin-left: 2em;
+}
+div.index div.tertiaryie {
+  margin-left: 4em;
+}
+div.index div.seeie {
+}
+div.index div.seealsoie {
+}
+div#colophon {
+  padding-top: 4em;
+  margin-left: 10%;
+  font-style: italic;
+}
+p.fmright {
+  text-align: right;
+  font-weight: bold;
+}
+p.fmleft {
+  text-align: left;
+  font-weight: bold;
+}
+/* Rule to autoscale cover figures */
+div.CoverFigure img {
+  margin: 0 auto 6px;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+/* Rule to constrain figure widths, other than covers */
+div.Figure img {
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+}
+/* Rule to constrain widths of display equations */
+div img.centeredImage {
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+}
+/* Rule for MathML support */
+table.equation {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+/* Rule to fix quirks-mode inheritance behavior in Firefox */
+table, caption {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+}
+
+/***************
+ MEDIA QUERIES
+ ***************/
+
+@media (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait) {
+	body {
+		width: 700px;
+		margin: 0 auto; 
+		font-family: Helvetica, Arial, sans-serif !important;
+	}
+    
+	body.for-print {
+		margin: 20px;
+        margin-right:20px;
+	}
+    body>table:first-of-type tr{
+        float:none;
+        border:none;
+
+        color:#444;
+        width:7%;
+	}
+}
+
+@media (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape) {
+	
+	body {
+		width: 900px;
+		margin: 0 auto; 
+		font-family: Helvetica, Arial, sans-serif !important;
+	}
+	
+	body.for-print {
+		margin: 20px;
+	}
+	body>table:first-of-type tr{
+		float:none;
+		border:none;
+		color:#444;
+		width:7%;
+	}
+}
+
+
+@media screen and (max-device-width: 480px)and (orientation:portrait) {
+    body {
+        width:320px;
+        margin: 0 5%;
+		font-family: Helvetica, Arial, sans-serif !important;
+    }
+
+    body>table:first-of-type tr{
+        border:none;
+        color:#444;
+        width:7%;
+        font-size:0.7em;
+	}		
+	.Fulltext table{
+		font-size: 1em;
+	}
+}
+
+
+@media screen and (max-device-width: 480px)and (orientation:landscape){
+    body {
+        width:800px;
+		font-family: Helvetica, Arial, sans-serif !important;
+    }
+
+    body>table:first-of-type tr{
+        border:none;
+        color:#444;
+        padding:5px;
+        font-size:0.9em;
+	}
+	
+    .Heading1 {
+        margin-top:0.2em;
+        margin-bottom:0.2em;
+        font-size:2.5em;
+    }
+    
+    /*h2.rubric {
+        margin-top:0.2em;
+        margin-bottom:0.2em;
+        font-size:1em;
+    }*/
+}
+
+
+@media screen and (max-device-width: 1024px) {
+	body{
+		line-height: 1.5;
+	}
+
+	h2.rubric {
+		text-align: left; !important
+		font-size: 14pt;  !important
+	}
+
+	.subrubric {
+		text-align: left; !important
+		font-size: 12pt;  !important
+	}
+
+	body>table:first-of-type{
+		border:0 !important;
+		border-color: #FFF !important;
+		border-style:none !important;
+		border-width:0;
+		margin:1em 0;
+		background-color: transparent;
+		width:980px;
+		font-size:0.7em;
+	}
+	body>table:first-of-type tr{
+		line-height:1.5em;
+		padding: 1em 1em;
+	}
+	body>table:first-of-type tr.header{
+		background-color: transparent;	
+	}
+	body>table:first-of-type td{
+		border:none !important;
+		border-color:#FFF;
+		padding: 0;
+	}
+
+	hr{
+		display:none;
+	}
+
+	table{
+		border:none;
+		border-spacing: 0 0;
+		margin-right:3em;
+	}
+	table tr{
+		border:none;
+		border-color:#FFF;	
+	}
+	table tr td{
+		border: none;
+	}
+
+	.Fulltext table[border="1"]{
+		border:none;
+		border-bottom: 3px solid #333;
+		border-top: 3px solid #333;
+		padding: 6px;
+		margin: 15px 5% 15px 0;
+		width:90%;
+		min-width:500px;
+	}
+	.Fulltext table[border="1"] tr th{
+		margin: 0em;
+		padding: 0.3em 0.5em;
+		border:none;
+		border-bottom: 1px solid #333;
+	}
+	.Fulltext table[border="1"] tr td{
+		margin: 0em 0.4em;
+		padding: 0.3em 0.5em;
+		border:none;
+	}
+
+	.Fulltext table.equation{
+		border: none;
+		margin: 10px 5% 10px 0;
+	}
+
+	.equation img{
+		margin:15px;
+		display:block;
+	}
+
+	table[width="100%"] {
+		border:none;
+	}
+
+	img[vspace="20%"]{
+		margin: 10px 5% 10px 0 !important;
+	}
+
+	.Fulltext .Figure img{
+		max-width:100%;
+	}
+
+	table.OrderedList {
+		border:none;
+	}
+	tr.header {
+		background: #FFFFFF;
+	}
+
+	.Heading1 {
+		line-height: 1;
+		text-align:left;
+		font-size: 18pt; !important
+		display:block;
+		clear:left;
+	}
+	div.SubTitle {
+		text-align:left;
+		font-size: 17pt; !important
+		line-height: 1;
+	}
+	div.heading2 {
+		line-height: 1;
+		text-align:left;
+		font-size: 16pt; !important
+		display:block;
+		clear:left;
+	}
+	div.SubHeading2 {
+		line-height: 1;
+		text-align:left;
+	}
+	div.heading3 {
+		display:block;
+		clear:left;
+	}
+	div.SubHeading3 {
+		display:block;
+		clear:left;
+	}
+	.AbstractHeading, .KeywordHeading, .heading2, .AcknowledgmentsHeading {
+		font-family: Helvetica, Arial, sans-serif;
+	}
+}
+
+

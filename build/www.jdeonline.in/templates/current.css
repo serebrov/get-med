@@ -1,0 +1,993 @@
+/* ALL URLs ARE MADE RELATIVE INSTEAD OF ABSOLUTE. ALL THE http://localhost/jc_new TAGS HAVE BEEN REMOVED.*/
+body{	background-color:#FBFAFC;}
+a
+{
+	TEXT-DECORATION:none;
+	font-size: 12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#0000ff; 
+	font-weight:normal;
+
+}
+
+a:visited
+{
+	color:#0000ff;	
+}
+
+a:Hover
+{
+	color:#0000ff;	
+	TEXT-DECORATION:underline;
+}
+
+.topmenu
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+	font-weight:bold;
+	padding-left:5px;
+}
+.topmenu a:link
+{
+	color: #000000;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.topmenu a:visited
+{
+	color: #000000;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.topmenu a:Hover
+{
+	color: #000000;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.button
+{
+	background-color: #77B4DC; 
+	color: #ffffff; 
+	border: 1px solid #ffffff;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:11px;
+	cursor:pointer;
+	height:20px;
+	font-weight:bold;
+}
+
+.dropDown
+{
+	background-color: #F5F5F5; 
+	font-size: 9pt;
+	font-family:  Arial, Verdana, Geneva, Helvetica, sans-serif;
+}
+
+.dbody
+{
+	margin-left:3px;
+	margin-top:0px;
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;	
+}
+/************************************************************************************/
+/****************************** ADD LINES **************************/
+/************************************************************************************/
+.tmb	{
+	
+	border: 0px none transparent;
+	width: 1000px;
+	/*1000px;*/
+	border-spacing: 0px;
+	float: center;
+	/*center;*/
+	background: url('../images/tmrc.gif') repeat-x;	
+}
+.tmb td	{
+	border: 0px none transparent;
+	padding: 0px;
+}
+table.outerTable	{
+	margin: 0px;
+	border: 0px solid transparent;
+	width: 100%;
+	border-spacing: 0px;
+	float: center;
+}
+table.outerTable	td{
+	padding: 0px;
+}
+table.topNav {
+	border: 0px solid transparent;
+	padding: 0px;
+	margin: 0px;
+	border-spacing: 0px;
+	width: 100%;
+	vertical-align: middle;
+	background: none transparent;
+	background: url('../images/topnav.gif') repeat-x;	
+
+
+}
+table.topNav td {
+	border: 0px solid transparent;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	vertical-align: middle;
+	
+}
+table.topNav td a{
+	display: block;
+	line-height: 41px;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+}
+table.topNav td a:link{
+	background: none transparent;
+
+	color: #fff;
+}
+table.topNav td a:visited{
+	background: none transparent;
+	color: #fff;
+}
+table.topNav td a:hover{
+	background: url('../images/mbi.gif') repeat-x;
+	color: #fff;
+}
+table.topNav td a:active{
+	
+	color: #fff;
+}
+table.srchbox {
+	border: 0px solid transparent;
+	border-spacing: 0px;
+}
+table.srchbox td {
+	padding: 2px 2px 5px 2px;
+	font-size: 13px;
+	color: #000000;
+}
+table.boolsearchtbl {
+	width: 90%;
+	border: 1px solid #aaaaaa;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	margin-top: 5px;
+}
+table.boolsearchtbl td {
+	vertical-align: top;
+	padding: 10px 5px 5px 5px;
+	border: 1px solid #aaaaaa;
+}
+.leftNav	{
+	width: 100%;
+
+	border-spacing: 1px;
+	color:#222;
+	background-color: #fff;
+	-moz-box-shadow: 1px 1px 5px #ddd;
+ -webkit-box-shadow: 1px 1px 5px #ddd;
+ box-shadow: 1px 1px 5px #ddd;
+ border-radius: 5px;
+	box-shadow: 0px 0px 5px #E7E4E4;
+	border:1px solid #ddd;
+}
+.leftNav td	{
+	width: 100%;
+	height:28px;
+	background-color:#fff;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;
+	border: 0px;
+	padding: 0px;
+
+	
+}
+.leftNav td a:link	{ color:#222; display: block; padding: 0px 0px 0px 10px; font-family: inherit; font-size: inherit; line-height: 28px; text-decoration: none; background-color: transparent; border-right:2px solid transparent; border-left:7px solid transparent; }
+.leftNav td a:visited	{ color:#222; display: block; padding: 0px 0px 0px 10px; font-family: inherit; font-size: inherit; line-height: 28px; text-decoration: none;  background-color: transparent; border-right:2px solid transparent; border-left:7px solid transparent; }
+.leftNav td a:hover	{ color:#000; display: block; padding: 0px 0px 0px 10px; font-family: 
+inherit; font-size: inherit; line-height: 28px; text-decoration: none; background-color: #BA221C; font-weight:bold;		background: url('../images/mbi.gif') repeat-x; 
+
+-moz-box-shadow: 1px 1px 5px #ddd;
+ -webkit-box-shadow: 1px 1px 5px #ddd;
+ box-shadow: 1px 1px 5px #ddd;
+ border-radius: 5px;
+	box-shadow: 0px 0px 10px #efefef;}
+/************************************************************************************/
+/************************************** UPTO HERE ***********************************/
+/************************************************************************************/
+
+.logo
+{
+	font-family:  Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:50px;
+	color:#FFFFFF;
+}
+.bottomTAble
+{
+	background-color:#E8E8E8;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000;
+}
+
+.FooterTAble
+{
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:11px;
+	color:inherit;
+	background-color: transparent; 
+}
+
+.pageSub
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:15px;
+ 	color:#110458;
+	font-weight:bold;
+}
+
+
+.inhd
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+ 	color:#FFFFFF;
+	background-color:#6A6562; 
+}
+
+.navCell
+{
+	background-color:#2A185D;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+
+.hashLinksTable
+{
+	border: 0px solid ;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:10PX;
+	font-weight:bold
+}
+
+.IssueVolume
+{
+	font-size:10PT;	
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#1f1f3f;
+}
+
+.insideLine
+{
+	background-color:#394780;
+}
+
+
+.articleType
+{
+	font-size:14PX;	
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#1f1f3f;
+}
+
+
+.articleTitle
+{
+	font-size:13px;	
+	font-weight:bold;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#000000; 
+	line-height:120%;
+}
+
+.articleAuthor
+{
+	font-size:12PX;	
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#000000;
+}
+
+.sAuthor
+{
+	font-size:11px;	
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#1f1f3f;
+	line-height:125%;
+}
+
+
+.CorrsAdd
+{
+	font-size:11px;	
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#1f1f3f;
+	line-height:125%;
+}
+
+.AuthorAff
+{
+	font-size:11px;	
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#1f1f1f;
+}
+
+
+.body
+{
+	font-size:12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#000000;
+	line-height: 140%;
+	background-color:transparent;
+}
+.about
+{
+	font-size:9pt;
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#000000;
+	line-height: 50%;
+}
+.PrePublication
+{
+	background-color:#FFFFFF;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12PX;
+	color:#796B5C;
+}
+.sitethis
+{
+	border: 1px solid #A6ADC4;
+	background-color:#F5DABF;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:11Px;
+	line-height:135%;
+	text-align:left;
+}
+
+.splnote
+{
+	border: 1px solid #A6ADC4;
+	background-color:#F5DABF;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:11Px;
+	line-height:135%;
+	color:#000000;
+}
+
+.topBand1
+{
+	font-size: 10px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#21201f;
+	background-color:#1BA6B2;
+	font-weight:bold;
+}
+.topBand1 a:LINK
+{
+	font-size: 12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#005f2e;
+	font-weight:bold;
+	text-decoration:none;
+}
+.topBand1 a:VISITED
+{
+	font-size: 12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#005f2e;
+	font-weight:bold;
+	text-decoration:none;
+}
+.topBand1 a:hover
+{
+	font-size: 12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#005f2e;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.topBand1MO
+{
+	font-size: 12px;
+	font-weight:bold;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#000000;
+	border:1px dotted #F6E9E8;
+	background-color:#ffffff;
+}
+.topBand1MO A:VISITED
+{
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:bold;
+}
+.topBand1MO A:LINK
+{
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:bold;
+}
+.topBand1MO A:Hover
+{
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.buttonCell
+{
+	/*background-color:#365082;*/
+	background-color:#F6E9E8;
+}
+
+.buttonCell a:link
+{
+	color: #aaaaaa;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.buttonCell a:visited
+{
+	color: #aaaaaa;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.buttonCell a:Hover
+{
+	color: #aaaaaa;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.nav
+{
+	font-size: 11px;
+	font-weight:bold;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#065F67;
+	background-color:#F6E9E8;
+}
+.nav a:link
+{
+	color:#000000;
+	text-decoration:none;
+}
+.nav a:visited
+{
+	color:#000000;
+	text-decoration:none;
+}
+.nav a:hover
+{
+	color:#000000;
+	text-decoration:none;
+}
+.navover
+{
+	font-size: 11px;
+	font-weight:bold;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#065F67;
+	/*background-color:#365082;*/
+	background-color:#77B4DC;  
+}
+.navover a:link
+{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+.navover a:visited
+{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+.navover a:hover
+{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.topTable
+{
+	font-size: 12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	text-decoration:none;
+}
+
+
+.jrnl
+{
+	font-size: 11px;
+	font-weight:normal;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	color:#000000;
+	text-decoration:none;
+}
+
+.topBand2
+{
+	font-size: 1px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	background-color: transparent;
+	COLOR: #000000;
+	text-decoration:none
+}
+.ltb
+{
+	background-color:#03838E;
+	color:#ffffff;
+	font-size:10px;
+}
+
+.Highlight
+{
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:10pt;
+	font-weight:Bold;
+	color:#190C74;
+	line-height:115%;
+}
+.HighlightArticleTitle
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#110090;
+	line-height:120%;
+}
+
+.tocAT
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	color:#005f2e;
+}
+
+.tochead
+{
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#065F67;
+	border-top:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+}
+
+.line
+{
+	background-color:#C4261C;
+}
+
+.HighlightVol
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	color:#444444;
+}
+
+
+.HighlightAbstract
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:10pt;
+	color:#1B1818;
+}
+.textBox
+{
+	font-size: 9pt;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	border: 1px solid #C0C0C0;
+}
+
+.articlepage
+{
+	background-color:#ffffff;
+	padding-top:1PX ;
+	line-height: 150%;
+	
+	padding-left:15px;
+	padding-right:15px;
+	font-size:12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+-moz-box-shadow: 1px 1px 10px #ddd;
+ -webkit-box-shadow: 1px 1px 10px #ddd;
+ box-shadow: 1px 1px 10px #ddd;
+border-radius: 5px;
+	box-shadow: 0px 0px 10px #E7E4E4;  
+
+border:1px solid #ddd;
+	color:#000000;
+	text-align:justify;	
+}
+.articlepage td{
+	padding: 1px;
+}
+.toctab
+{
+	background-color:#ffffff;
+	
+	line-height: 150%;
+
+	padding-left:15px;
+	padding-right:15px;
+	font-size:12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+-moz-box-shadow: 1px 1px 10px #ddd;
+ -webkit-box-shadow: 1px 1px 10px #ddd;
+ box-shadow: 1px 1px 10px #ddd;
+  border-radius: 5px;
+	box-shadow: 0px 0px 10px #E7E4E4;
+
+	color:#000000;
+	text-align:justify;	
+}
+.parameter
+{
+	font-size:12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#065F67;
+}
+.parameterhead
+{
+	font-size:12px;
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#065F67;
+}
+.parametertext
+{
+	font-size:12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#065F67;
+}
+.pageHead
+{
+	font-size:18px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#000;
+
+
+	display:block;
+	background-color:#fff;
+	line-height:40px;
+	-moz-box-shadow: 1px 1px 4px #ddd;
+ -webkit-box-shadow: 1px 1px 4px #ddd;
+ box-shadow: 1px 1px 4px #ddd;
+ border-radius: 5px;
+	box-shadow: 0px 0px 10px #eaeaea;
+		
+}
+
+.other
+{
+	font-size:12px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#1f1f3f;
+}
+
+.sTitle
+{
+	font-size:18px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:	#000000;
+	line-height:110%;
+	font-weight:bold;
+	text-align:left;
+}
+
+.ref
+{
+	font-size:11px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:	#110090;
+}
+
+.empty
+{
+	background-color:transparent;
+	color:#065F67;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:1px;
+
+}
+
+.footer 
+{
+	background-color:#E57917;
+	color:#fff;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:11px;
+	padding-left:5px;
+	background:url(../images/fri.gif) repeat;
+}
+.footer a:link {color:#fff;font-weight:normal;TEXT-DECORATION:underline;}
+.footer a:visited {color:#fff;font-weight:normal;TEXT-DECORATION:underline;}
+.footer a:hover {color:#fff;font-weight:normal;TEXT-DECORATION:underline;}
+.FooterTAble a:link {color:#fff;font-weight:normal;TEXT-DECORATION:underline;}
+.FooterTAble a:visited {color:#fff;font-weight:normal;TEXT-DECORATION:underline;}
+.FooterTAble a:hover {color:#fff;font-weight:normal;TEXT-DECORATION:underline;}
+
+.menu
+{
+	color:#000000;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:normal;
+}
+
+.sj
+{
+	font-size:11px;
+	font-family: Arial, Verdana,sans-serif;
+	color: #065F67;
+	background-color:#FFFFFF;
+	font-weight:bold;
+}
+.Footertab
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:10px;
+	color:#A1A1A1;
+	background-color:#FFFFFF
+}
+
+
+.foot
+{
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:10px;	
+	color:#000000;
+}
+
+.medknow
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:10px;
+	color:#A1A1A1;
+}
+.jname
+{
+	font-family:	Verdana, Arial, sans-serif;
+	font-size:18px;
+	color:#E7E4E4;
+}
+.jasso
+{
+	font-family:	Verdana, Arial, sans-serif;
+	font-size:11px;
+	color:#E7E4E4;
+	font-weight:bold;
+}
+
+.rtmc
+{
+	font-size: 11px;
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#21201f;
+	font-weight:normal;
+	background:url(http://www.jdeonline.in/images/tpic.gif) no-repeat;
+	padding-bottom:12px;
+}
+.adlink
+{
+	font-size: 10px;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+}
+.toc
+{
+	font-size: 11px;
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#110090;
+	font-weight:normal;
+}
+
+
+.leftnavcelltop
+{
+	color:#000000;
+	background-color: #FFFFFF;
+	border-bottom:1px solid #ffffff;
+}
+
+
+.leftcell
+{
+    
+}
+.leftref
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:14px;
+	color:#000000;
+}	
+.vol
+{
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:11px;
+	color:#065F67;
+}	
+
+.headrow
+{
+	font-size: 12px;
+	font-weight:bold;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color:#FFFFFF;
+	background-color:#065F67;
+}
+
+.spl
+{
+	font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:12px;
+	FONT-STYLE:  ITALIC;
+	color:#000000;
+	border: 3px dotted #FFFFFF;
+	background-color:#CDD8BA;
+	margin-left:2px;
+	margin-right:2px;
+}
+
+.ftbl
+{
+	BACKGROUND: url(../images/ft.gif) repeat left center;
+}
+
+.mimg
+{
+	BACKGROUND: url(http://www.jdeonline.in/images/mnb.gif) repeat left center;
+}
+.w3cc
+{
+	font-size:9px;
+}
+.w3cc a:link
+{
+	color:#000000;
+	font-size:9px;
+}
+.w3cc a:visited
+{
+	color:#000000;
+	font-size:9px;
+}
+.w3cc a:hover
+{
+	color:#000000;	font-size:9px;
+}
+.jh
+{
+background-color:#000000;
+color:#000000;
+font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+BACKGROUND: url(../images/mbi.gif) repeat;
+font-size:11px;
+
+}
+.bm
+{
+	font-size:9px;
+background-color:#F6E9E8;
+color:#FFFFFF;
+font-family:Arial, Verdana, Geneva, Helvetica, sans-serif;
+BACKGROUND: url(http://www.jdeonline.in/images/bmr.gif) repeat-x;
+}
+.jh a:link{color:#000000;font-size:12px;font-weight:bold;}
+.jh a:visited{color:#000000;font-size:12px;font-weight:bold;}
+.jh a:hover{color:#000000;font-size:12px;font-weight:bold;}
+
+.hm
+{
+font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+font-size:12px;
+text-align:justify;
+}
+
+.hd
+{
+	background-color:#1BA6B2;
+	color:#FFFFFF;
+	FONT-FAMILY:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:10px;
+}
+
+.hdi
+{
+background-color:#EEF2F8;
+}
+
+.btm
+{
+BACKGROUND: url(../images/btm.gif) repeat;
+}
+.jhb{BACKGROUND: url(../images/tbl.gif) repeat-x;
+FONT-FAMILY:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	color:#ffffff;
+}
+.nb{BACKGROUND: url(http://www.jdeonline.in/images/11.gif) no-repeat;}
+.tbcl{BACKGROUND-color: #837aa5;}
+td.nb{height:110px;}
+
+
+.kyds{
+FONT-FAMILY:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#383838;
+}
+.sart{FONT-FAMILY:Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#383838;
+	background-color:#E8E4DF;}
+.hpsr{background:url(http://www.jdeonline.in/images/16.jpg) no-repeat;color:#000000;text-decoration:none;}
+.tbt{FONT-FAMILY:arial, verdana, Helvetica, Sans-Serif;background-color:#000000;text-decoration:none;color:#ffffff;}
+.tmt{FONT-FAMILY:arial, verdana, Helvetica, Sans-Serif;background:url(../images/logo.gif) no-repeat;color:#cccccc;text-decoration:none;background-color:#ffffff;}
+.tbt a:link{FONT-FAMILY:arial, verdana, Helvetica, Sans-Serif;color:#ffffff;text-decoration:none;font-size:13px;font-weight:bold;}
+.tbt a:visited{FONT-FAMILY:arial, verdana, Helvetica, Sans-Serif;color:#ffffff;text-decoration:none;font-size:13px;font-weight:bold;}
+.tbt a:hover{FONT-FAMILY:arial, verdana, Helvetica, Sans-Serif;color:#ffffff;text-decoration:none;font-size:13px;font-weight:bold;}
+.abt {padding:5px;FONT-FAMILY:arial, verdana, Helvetica, Sans-Serif;color:#2D4470;text-decoration:none;font-size:12px;	text-align:justify;	}
+.vll{background:url(../images/vll.gif) repeat-y;}
+.vlr{background:url(../images/vlr.gif) repeat-y;}
+.hlt{background:url(../images/hlt.gif) repeat-x;}
+.hlb{background:url(../images/hlb.gif) repeat-x;}
+.mlro{background:url(../images/mlro.gif) repeat-x;color:#ffffff;font-size:11px;}
+.mlro a:link{color:#ffffff;font-size:11px;}
+.mlro a:visited{color:#ffffff;font-size:11px;}
+.mlro a:hover{color:#ffffff;font-size:11px;}
+.journalHeading {color:#333333;}
+/*.journalHeading a:link{FONT-FAMILY:arial, verdana, Helvetica, Sans-Serif;color:#000000;text-decoration:none;font-size:13px;font-weight:bold;}
+.journalHeading a:visited{FONT-FAMILY:arial, verdana, Helvetica, Sans-Serif;color:#000000;text-decoration:none;font-size:13px;font-weight:bold;}
+.journalHeading a:hover{FONT-FAMILY:arial, verdana, Helvetica, Sans-Serif;color:#000000;text-decoration:underline;font-size:13px;font-weight:bold;}
+*/
+.lg{background:url(../images/logo.gif) no-repeat;padding-left:80px;color:#ffffff; font-size: 12px;}
+.lg1{background:url(http://www.jdeonline.in/images/dsg1.gif) no-repeat;padding-left:80px;color:#ffffff; font-size: 12px;}
+.lg2{background:url(../images/asso.gif) no-repeat;padding-left:80px;color:#ffffff; font-size: 12px;}
+.brv{	background:url(../images/hs.gif) repeat-y;}
+
+.abox{	background:url(../images/abox.gif) repeat;}
+.lbox{	background:url(../images/lbox.gif) repeat-y;}
+.dsg1{	background:url(http://www.jdeonline.in/images/dsg1.gif) no-repeat;}
+.tlc{	background:url(../images/tmlr.gif) repeat-x;}
+.trc{	background:url(../images/tmrc.gif) repeat-x;}
+.licons {margin-top:15px;text-align:center;}
+
+a.anchor, a.anchor:link, a.anchor:visited, a.anchor:hover, a.anchor:active {
+	font: inherit;
+	color: #000000;
+	text-decoration: none;
+	cursor: text;
+}
+/*******************************************************************************************************************
+											VARIABLE SIZE ELEMENTS
+*******************************************************************************************************************/
+p blockquote, blockquote, .articlepage p, td .body, p .body, table.other td span, a.anchor {
+	font-size: 12px;
+}
+

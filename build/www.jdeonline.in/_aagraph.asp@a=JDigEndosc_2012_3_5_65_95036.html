@@ -1,0 +1,46 @@
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="templates/current.css">
+<script language="javascript" src="../www.medknow.com/graphs.js"></script>
+<script language="javascript"> <!--
+function createGraph(lb,vl, lyr) {
+var graph = new BAR_GRAPH("hBar");
+graph.values = vl;
+graph.labels = lb;
+graph.showValues = 2;
+graph.barWidth = 9;
+graph.barLength = 1;
+graph.labelSize = 9;
+graph.absValuesSize = 9;
+graph.percValuesSize = 1;
+graph.graphPadding =0;
+graph.graphBGColor = "#ABCDEF";
+graph.graphBorder = "1px solid blue";
+graph.barColors = "#A0C0F0";
+graph.barBGColor = "#E0F0FF";
+graph.barBorder = "1px outset white";
+graph.labelColor = "#000000";
+graph.labelBGColor = "#C0E0FF";
+graph.labelBorder = "1px groove white";
+graph.absValuesColor = "#000000";
+graph.absValuesBGColor = "#FFFFFF";
+graph.absValuesBorder = "2px groove white";
+ document.getElementById(lyr).innerHTML = graph.create();
+
+
+}
+
+//--> </script>
+</head>
+<body leftmargin="0" topmargin="0">
+<table width="60%"  ><tr><td bgColor="#ABCDEF" class="leftnavcell"><b>Total downloads in last 2 months</b></td></tr>
+<tr><td valign="top">
+<div id="divGraph"  ></div></tr></table>
+<script>
+createGraph('Nov<br>2012,Oct<br>2012','53,60','divGraph')
+
+</script>
+
+</body>
+</html>

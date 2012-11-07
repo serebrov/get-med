@@ -3,6 +3,9 @@
 import sys
 import urllib
 
+# http://www.crummy.com/software/BeautifulSoup/#Download
+# sudo pip install beautifulsoup4
+
 # Handle command line options.
 if len(sys.argv) < 3:
     print "Usage: python get.py list.csv outdir"
