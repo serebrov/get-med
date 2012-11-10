@@ -59,8 +59,11 @@ def get_page(br, url):
 
 def get_file(br, url):
     # Open some site, let's pick a random one, the first that pops in mind:
-    f = br.retrieve(url)[0]
-    return f
+    try:
+        f = br.retrieve(url)[0]
+        return f
+    except:
+        return False
 
 def get_file_name(url):
     return url.replace('http://','').replace('/','_').replace('\n', '.html')
@@ -70,22 +73,38 @@ def write_to_file(data, file_name):
     #out.write(data.read())
     out.write(data.encode('utf-8'))
 
-def process_file_link(tag, attr, save_dir):
+def absurl(base_url, url):
+    if url[:2] == '//':
+        return 'http:' + url
+    o = urlparse.urlparse(base_url)
+    base = o.scheme + '://' + o.netloc
+    val = url
+    if not 'http' in url:
+        if url[0] == '.':
+            val = base + os.path.realpath(os.path.dirname(o.path) + '/' + url)
+        else:
+            if base[-1] != '/':
+                base = base + '/'
+            if url[0] == '/':
+                url = url[1:]
+            val = base + url
+    return val
+
+def process_file_link(url, tag, attr, save_dir):
     val = tag.get(attr)
     if not val:
         return
-    if val[:2] == '//':
-        val = 'http:' + val
-    if not 'http' in val:
-        val = o.scheme + '://' + o.netloc + val
+    val = absurl(url, val)
     f = get_file(br, val)
-    shutil.copy(f, os.path.join(base_dir, save_dir, os.path.basename(f)))
-    tag[attr] = os.path.join('.', save_dir, os.path.basename(f))
+    if f:
+        shutil.copy(f, os.path.join(base_dir, save_dir, os.path.basename(f)))
+        tag[attr] = os.path.join('.', save_dir, os.path.basename(f))
+    else:
+        print 'Fail: ' + val + ' (' + tag.get(attr) + ')'
 
 br = init_browser()
 for url in links:
     resp = get_page(br, url)
-    o = urlparse.urlparse(url)
     file_name = get_file_name(url)
     soup = BeautifulSoup(resp)
     num = 1
@@ -93,12 +112,12 @@ for url in links:
     if not os.path.exists(os.path.join(base_dir, img_dir)):
         os.makedirs(os.path.join(base_dir, img_dir))
     for img in soup.find_all('img'):
-        process_file_link(img, 'src', img_dir)
-        process_file_link(img, 'src-large', img_dir)
+        process_file_link(url, img, 'src', img_dir)
+        process_file_link(url, img, 'src-large', img_dir)
     for script in soup.find_all('script'):
-        process_file_link(script, 'src', img_dir)
+        process_file_link(url, script, 'src', img_dir)
     for link in soup.find_all('link'):
         if link.get('type') == 'text/css':
-            process_file_link(link, 'href', img_dir)
+            process_file_link(url, link, 'href', img_dir)
     write_to_file(soup.prettify(formatter="html"), file_name)
     print file_name
