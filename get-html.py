@@ -1,19 +1,30 @@
 #!/usr/bin/env python
+# -*- coding: utf8 -*-
 
+import os
 import sys
+import shutil
 import urllib
 from bs4 import BeautifulSoup
 import mechanize
 import cookielib
+import urlparse
+
+# Handle command line options.
+if len(sys.argv) < 3:
+    print "Usage: python get.py list.csv outdir"
+    sys.exit(1)
+
+links = open(sys.argv[1], 'r')
+base_dir = sys.argv[2]
 
 # http://www.crummy.com/software/BeautifulSoup/#Download
 # sudo pip install beautifulsoup4
 # http://wwwsearch.sourceforge.net/mechanize/
 # sudo easy_install mechanize
 
-def get_url(url):
+def init_browser():
     # http://stockrt.github.com/p/emulating-a-browser-in-python-with-mechanize/
-
     #return urllib.urlopen(url)
     # Browser
     br = mechanize.Browser()
@@ -39,32 +50,55 @@ def get_url(url):
 
     # User-Agent (this is cheating, ok?)
     br.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+    return br
+
+def get_page(br, url):
     # Open some site, let's pick a random one, the first that pops in mind:
     r = br.open(url)
     return r.read()
 
+def get_file(br, url):
+    # Open some site, let's pick a random one, the first that pops in mind:
+    f = br.retrieve(url)[0]
+    return f
+
 def get_file_name(url):
     return url.replace('http://','').replace('/','_').replace('\n', '.html')
 
-def write_to_file(response, file_name):
-    d = sys.argv[2]
-    out = open(d + '/' + file_name, 'w')
-    out.write(resp.read())
+def write_to_file(data, file_name):
+    out = open(os.path.join(base_dir, file_name), 'w')
+    #out.write(data.read())
+    out.write(data.encode('utf-8'))
 
-# Handle command line options.
-if len(sys.argv) < 3:
-    print "Usage: python get.py list.csv outdir"
-    sys.exit(1)
+def process_file_link(tag, attr, save_dir):
+    val = tag.get(attr)
+    if not val:
+        return
+    if val[:2] == '//':
+        val = 'http:' + val
+    if not 'http' in val:
+        val = o.scheme + '://' + o.netloc + val
+    f = get_file(br, val)
+    shutil.copy(f, os.path.join(base_dir, save_dir, os.path.basename(f)))
+    tag[attr] = os.path.join('.', save_dir, os.path.basename(f))
 
-f = open(sys.argv[1], 'r')
-d = sys.argv[2]
-for url in f:
-    resp = get_url(url)
+br = init_browser()
+for url in links:
+    resp = get_page(br, url)
+    o = urlparse.urlparse(url)
     file_name = get_file_name(url)
     soup = BeautifulSoup(resp)
-    #write_to_file(resp, file_name)
-    print(soup.prettify())
+    num = 1
+    img_dir = file_name+'_files'
+    if not os.path.exists(os.path.join(base_dir, img_dir)):
+        os.makedirs(os.path.join(base_dir, img_dir))
+    for img in soup.find_all('img'):
+        process_file_link(img, 'src', img_dir)
+        process_file_link(img, 'src-large', img_dir)
+    for script in soup.find_all('script'):
+        process_file_link(script, 'src', img_dir)
+    for link in soup.find_all('link'):
+        if link.get('type') == 'text/css':
+            process_file_link(link, 'href', img_dir)
+    write_to_file(soup.prettify(formatter="html"), file_name)
     print file_name
-
-
-
