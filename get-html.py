@@ -90,34 +90,62 @@ def absurl(base_url, url):
             val = base + url
     return val
 
-def process_file_link(url, tag, attr, save_dir):
+def process_file_link(url, tag, attr, files):
     val = tag.get(attr)
     if not val:
         return
     val = absurl(url, val)
     f = get_file(br, val)
     if f:
-        shutil.copy(f, os.path.join(base_dir, save_dir, os.path.basename(f)))
-        tag[attr] = os.path.join('.', save_dir, os.path.basename(f))
+        files.append((f, tag, attr))
+        #shutil.copy(f, os.path.join(base_dir, save_dir, os.path.basename(f)))
+        #tag[attr] = os.path.join('.', save_dir, os.path.basename(f))
     else:
         print 'Fail: ' + val + ' (' + tag.get(attr) + ')'
+        return (None, tag, attr)
+
+def download_page(br, url, base_url=None):
+    if not base_url:
+        base_url = url
+    resp = get_page(br, url)
+    soup = BeautifulSoup(resp)
+    files = []
+    for img in soup.find_all('img'):
+        process_file_link(base_url, img, 'src', files)
+        process_file_link(base_url, img, 'src-large', files)
+    for script in soup.find_all('script'):
+        process_file_link(base_url, script, 'src', files)
+    for link in soup.find_all('link'):
+        if link.get('type') == 'text/css':
+            process_file_link(base_url, link, 'href', files)
+    return (soup, files)
+
+def save_page(soup, files, page_name=None):
+    if not page_name:
+        page_name = get_file_name(url)
+    files_dir = page_name+'_files'
+    if not os.path.exists(os.path.join(base_dir, files_dir)):
+        os.makedirs(os.path.join(base_dir, files_dir))
+    for (f, tag, attr) in files:
+        if f:
+            shutil.copy(f, os.path.join(base_dir, files_dir, os.path.basename(f)))
+            tag[attr] = os.path.join('.', files_dir, os.path.basename(f))
+    write_to_file(soup.prettify(formatter="html"), page_name)
+    return page_name
+
+def translate_page(br, url):
+    t_url = 'http://translate.google.com/translate?hl=en&sl=auto&tl=ru&u=' + urllib.quote(url)
+    r = br.open(t_url)
+    soup = BeautifulSoup(r.read())
+    t_url = soup.find_all('iframe')[0].get('src')
+    return download_page(br, t_url, url)
 
 br = init_browser()
 for url in links:
-    resp = get_page(br, url)
-    file_name = get_file_name(url)
-    soup = BeautifulSoup(resp)
-    num = 1
-    img_dir = file_name+'_files'
-    if not os.path.exists(os.path.join(base_dir, img_dir)):
-        os.makedirs(os.path.join(base_dir, img_dir))
-    for img in soup.find_all('img'):
-        process_file_link(url, img, 'src', img_dir)
-        process_file_link(url, img, 'src-large', img_dir)
-    for script in soup.find_all('script'):
-        process_file_link(url, script, 'src', img_dir)
-    for link in soup.find_all('link'):
-        if link.get('type') == 'text/css':
-            process_file_link(url, link, 'href', img_dir)
-    write_to_file(soup.prettify(formatter="html"), file_name)
-    print file_name
+    name = save_page(*download_page(br, url))
+    print name
+    name = name + '_ru'
+    (soup, files) = translate_page(br, url)
+    soup.base.decompose()
+    name = save_page(soup, files, name)
+    print name
