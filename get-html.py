@@ -66,7 +66,7 @@ def get_file(br, url):
         return False
 
 def get_file_name(url):
-    return url.replace('http://','').replace('/','_').replace('\n', '.html')
+    return url.replace('http://','').replace('/','_').replace('\n', '.html').replace(';','_').replace('?','_')
 
 def write_to_file(data, file_name):
     out = open(os.path.join(base_dir, file_name), 'w')
