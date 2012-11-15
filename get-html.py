@@ -53,12 +53,10 @@ def init_browser():
     return br
 
 def get_page(br, url):
-    # Open some site, let's pick a random one, the first that pops in mind:
     r = br.open(url)
     return r.read()
 
 def get_file(br, url):
-    # Open some site, let's pick a random one, the first that pops in mind:
     try:
         f = br.retrieve(url)[0]
         return f
