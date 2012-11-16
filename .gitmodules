@@ -1,3 +1,6 @@
 [submodule "pdfminer"]
 	path = pdfminer
 	url = https://github.com/euske/pdfminer.git
+[submodule "pdfminer-lib"]
+	path = pdfminer-lib
+	url = https://github.com/euske/pdfminer.git
