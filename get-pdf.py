@@ -10,10 +10,11 @@ import mechanize
 import cookielib
 import urlparse
 
-import pdfm
-from pdfm.pdfinterp import PDFResourceManager, process_pdf
-from pdfm.converter import HTMLConverter, TextConverter
-from pdfm.layout import LAParams
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/pdfminer-lib')
+import pdfminer
+from pdfminer.pdfinterp import PDFResourceManager, process_pdf
+from pdfminer.converter import HTMLConverter, TextConverter
+from pdfminer.layout import LAParams
 
 # Handle command line options.
 if len(sys.argv) < 3:
