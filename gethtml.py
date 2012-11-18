@@ -25,7 +25,6 @@ base_dir = sys.argv[2]
 
 def init_browser():
     # http://stockrt.github.com/p/emulating-a-browser-in-python-with-mechanize/
-    #return urllib.urlopen(url)
     # Browser
     br = mechanize.Browser()
 
@@ -63,8 +62,8 @@ def get_file(br, url):
     except:
         return False
 
-def get_file_name(url):
-    return url.replace('http://','').replace('/','_').replace('\n', '.html').replace(';','_').replace('?','_')
+def get_file_name(url, ending='.html'):
+    return url.replace('https://','').replace('http://','').replace('/','_').replace('\n', ending).replace(';','_').replace('?','_')
 
 def write_to_file(data, file_name):
     out = open(os.path.join(base_dir, file_name), 'w')
@@ -88,7 +87,7 @@ def absurl(base_url, url):
             val = base + url
     return val
 
-def process_file_link(url, tag, attr, files):
+def process_file_link(br, url, tag, attr, files):
     val = tag.get(attr)
     if not val:
         return
@@ -96,8 +95,6 @@ def process_file_link(url, tag, attr, files):
     f = get_file(br, val)
     if f:
         files.append((f, tag, attr))
-        #shutil.copy(f, os.path.join(base_dir, save_dir, os.path.basename(f)))
-        #tag[attr] = os.path.join('.', save_dir, os.path.basename(f))
     else:
         print 'Fail: ' + val + ' (' + tag.get(attr) + ')'
         return (None, tag, attr)
@@ -109,13 +106,13 @@ def download_page(br, url, base_url=None):
     soup = BeautifulSoup(resp)
     files = []
     for img in soup.find_all('img'):
-        process_file_link(base_url, img, 'src', files)
-        process_file_link(base_url, img, 'src-large', files)
+        process_file_link(br, base_url, img, 'src', files)
+        process_file_link(br, base_url, img, 'src-large', files)
     for script in soup.find_all('script'):
-        process_file_link(base_url, script, 'src', files)
+        process_file_link(br, base_url, script, 'src', files)
     for link in soup.find_all('link'):
         if link.get('type') == 'text/css':
-            process_file_link(base_url, link, 'href', files)
+            process_file_link(br, base_url, link, 'href', files)
     return (soup, files)
 
 def save_page(soup, files, page_name=None):
@@ -136,14 +133,27 @@ def translate_page(br, url):
     r = br.open(t_url)
     soup = BeautifulSoup(r.read())
     t_url = soup.find_all('iframe')[0].get('src')
-    return download_page(br, t_url, url)
+    if t_url[0:4] != 'http':
+        t_url = 'http://translate.google.com' + t_url
+    try:
+        return download_page(br, t_url, url)
+    except Exception as e:
+        print 'Can not translate page: ' + url + 't_url: ' + t_url + ' error: ' + str(e)
 
-br = init_browser()
-for url in links:
-    name = save_page(*download_page(br, url))
-    print name
-    name = name + '_ru'
-    (soup, files) = translate_page(br, url)
-    soup.base.decompose()
-    name = save_page(soup, files, name)
-    print name
+def translate_text(br, txt):
+    br.open('http://translate.google.com?sl=en&tl=ru')
+    br.select_form(name='text_form')
+    br['text'] = txt;
+    resp = br.submit()
+    return resp.get_data()
+
+if __name__ == "__main__":
+    br = init_browser()
+    for url in links:
+        name = save_page(*download_page(br, url))
+        print name
+        name = name + '_ru'
+        (soup, files) = translate_page(br, url)
+        soup.base.decompose()
+        name = save_page(soup, files, name)
+        print name
