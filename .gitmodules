@@ -4,3 +4,6 @@
 [submodule "pdfminer-lib"]
 	path = pdfminer-lib
 	url = https://github.com/euske/pdfminer.git
+[submodule "pdf2htmlEX"]
+	path = pdf2htmlEX
+	url = https://github.com/coolwanglu/pdf2htmlEX.git
