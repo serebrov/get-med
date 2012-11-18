@@ -10,11 +10,12 @@ def get_title(f):
 
 # Handle command line options.
 if len(sys.argv) < 2:
-    print "Usage: python indexer.py htmldir"
+    print "Usage: python indexhtml.py htmldir"
     sys.exit(1)
 
 base_dir = sys.argv[1]
-index_name = os.path.join(base_dir, 'index.html')
+base_last = os.path.split(base_dir)[-1]
+index_name = os.path.join(base_dir+'/../', 'index.html')
 if os.path.exists(index_name):
     os.remove(index_name)
 files = glob.glob(os.path.join(base_dir, '*.html'))
@@ -31,11 +32,11 @@ for f in files:
     fname = os.path.basename(f)
     tag = soup.new_tag('p')
     soup.body.append(tag)
-    a = soup.new_tag('a', href='./'+fname, target='_blank')
+    a = soup.new_tag('a', href='./'+base_last+'/'+fname, target='_blank')
     a.append(soup.new_string(get_title(f)))
     tag.append(a)
     tag.append(soup.new_tag('br'))
-    a = soup.new_tag('a', href='./'+fname+'_ru', target='_blank')
+    a = soup.new_tag('a', href='./'+base_last+'/'+fname+'_ru', target='_blank')
     a.append(soup.new_string(get_title(f+'_ru')))
     tag.append(a)
     tag.append(soup.new_tag('br'))

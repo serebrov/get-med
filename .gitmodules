@@ -1,3 +1,6 @@
 [submodule "pdfminer-lib"]
 	path = pdfminer-lib
 	url = https://github.com/euske/pdfminer.git
+[submodule "pyPdf-lib"]
+	path = pyPdf-lib
+	url = https://github.com/mfenniak/pyPdf.git
