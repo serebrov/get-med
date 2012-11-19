@@ -59,6 +59,7 @@ for f in files:
         a = soup.new_tag('a', href='./'+base_last+'/'+fname, target='_blank')
         a.append(soup.new_string(fname))
         tag.append(a)
+        tag.append(soup.new_tag('br'))
     tag.append(soup.new_tag('br'))
     tag.append(soup.new_tag('br'))
 
