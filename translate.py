@@ -19,7 +19,7 @@ for dirname, dirnames, filenames in os.walk(sys.argv[1]):
 
         # Construct the message body.
         print txt
-        body = "sl=%s&tl=%s&text=%s" % ('en', 'ru', urllib.urlencode(txt))
+        body = "sl=%s&tl=%s&text=%s" % ('en', 'ru', urllib.quote(txt))
 
         # Connect to translate.google.com and request result.
         conn = HTTPConnection("translate.google.com")
