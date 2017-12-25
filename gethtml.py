@@ -15,9 +15,6 @@ if len(sys.argv) < 3:
     print "Usage: python get.py list.csv outdir"
     sys.exit(1)
 
-links = open(sys.argv[1], 'r')
-base_dir = sys.argv[2]
-
 # http://www.crummy.com/software/BeautifulSoup/#Download
 # sudo pip install beautifulsoup4
 # http://wwwsearch.sourceforge.net/mechanize/
@@ -26,7 +23,7 @@ base_dir = sys.argv[2]
 def init_browser():
     # http://stockrt.github.com/p/emulating-a-browser-in-python-with-mechanize/
     # Browser
-    br = mechanize.Browser()
+    br = mechanize.Browser(factory=mechanize.RobustFactory())
 
     # Cookie Jar
     cj = cookielib.LWPCookieJar()
@@ -65,8 +62,8 @@ def get_file(br, url):
 def get_file_name(url, ending='.html'):
     return url.replace('https://','').replace('http://','').replace('/','_').replace('\n', ending).replace(';','_').replace('?','_')
 
-def write_to_file(data, file_name):
-    out = open(os.path.join(base_dir, file_name), 'w')
+def write_to_file(out_dir, data, file_name):
+    out = open(os.path.join(out_dir, file_name), 'w')
     #out.write(data.read())
     out.write(data.encode('utf-8'))
 
@@ -115,17 +112,17 @@ def download_page(br, url, base_url=None):
             process_file_link(br, base_url, link, 'href', files)
     return (soup, files)
 
-def save_page(soup, files, page_name=None):
+def save_page(out_dir, soup, files, page_name=None):
     if not page_name:
         page_name = get_file_name(url)
     files_dir = page_name+'_files'
-    if not os.path.exists(os.path.join(base_dir, files_dir)):
-        os.makedirs(os.path.join(base_dir, files_dir))
+    if not os.path.exists(os.path.join(out_dir, files_dir)):
+        os.makedirs(os.path.join(out_dir, files_dir))
     for (f, tag, attr) in files:
         if f:
-            shutil.copy(f, os.path.join(base_dir, files_dir, os.path.basename(f)))
+            shutil.copy(f, os.path.join(out_dir, files_dir, os.path.basename(f)))
             tag[attr] = os.path.join('.', files_dir, os.path.basename(f))
-    write_to_file(soup.prettify(formatter="html"), page_name)
+    write_to_file(out_dir, soup.prettify(formatter="html"), page_name)
     return page_name
 
 def translate_page(br, url):
@@ -143,17 +140,21 @@ def translate_page(br, url):
 def translate_text(br, txt):
     br.open('http://translate.google.com?sl=en&tl=ru')
     br.select_form(name='text_form')
-    br['text'] = txt;
+    br['text'] = txt
     resp = br.submit()
     return resp.get_data()
 
 if __name__ == "__main__":
+    links = open(sys.argv[1], 'r')
+    # in_dir = sys.argv[1]
+    out_dir = sys.argv[2]
+
     br = init_browser()
     for url in links:
-        name = save_page(*download_page(br, url))
+        name = save_page(out_dir, *download_page(br, url))
         print name
         name = name + '_ru'
         (soup, files) = translate_page(br, url)
         soup.base.decompose()
-        name = save_page(soup, files, name)
+        name = save_page(out_dir, soup, files, name)
         print name

@@ -20,9 +20,6 @@ if len(sys.argv) < 3:
     print "Usage: python get.py list.csv outdir"
     sys.exit(1)
 
-links = open(sys.argv[1], 'r')
-base_dir = sys.argv[2]
-
 def convert_pdfminer(inp, outp, codec='utf-8', maxpages=0, pagenos=None, html=True):
     try:
         rsrcmgr = PDFResourceManager()
@@ -41,12 +38,12 @@ def convert_pdftohtml(in_name, out_name):
     call(['pdf2htmlEX', in_name, out_name])
     return os.path.exists(out_name)
 
-def download_files(br):
+def download_files(links, out_dir, br):
     for url in links:
         f = gethtml.get_file(br, url)
         if f:
             name = gethtml.get_file_name(url, '.pdf')
-            path = os.path.join(base_dir, name)
+            path = os.path.join(out_dir, name)
             shutil.copy(f, path)
         try:
             (soup, files) = gethtml.translate_page(br, url)
@@ -55,9 +52,13 @@ def download_files(br):
             print 'Can not google translate: ' + url + ' error: ' + str(e)
 
 if __name__ == "__main__":
+    # links = open(sys.argv[1], 'r')
+    in_dir = sys.argv[1]
+    out_dir = sys.argv[2]
+
     br = gethtml.init_browser()
-    #download_files(br)
-    files = glob.glob(os.path.join(base_dir, '*.pdf'))
+    #download_files(links, out_dir, br)
+    files = glob.glob(os.path.join(in_dir, '*.pdf'))
     for path in files:
         f = open(path, 'rb')
         f_out = open(path+'_convert_pdfminer.html', 'wb')
